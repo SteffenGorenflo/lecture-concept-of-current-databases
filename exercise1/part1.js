@@ -29,341 +29,341 @@ var ain = [
     {
         name: 'rechnen',
         dozent: 'hase',
-        semester: '1',
+        semester: 1,
         studiengang: {
             '$ref': 'studiengang',
             '$id': ainID,
             '$db': 'htwg'
         },
-        sws: '10',
-        ects: '2'
+        sws: 10,
+        ects: 2
     }, {
         name: 'lesen',
         dozent: 'bittel',
-        semester: '2',
+        semester: 2,
         studiengang: {
             '$ref': 'studiengang',
             '$id': ainID,
             '$db': 'htwg'
         },
-        sws: '1',
-        ects: '10'
+        sws: 1,
+        ects: 10
     }, {
         name: 'malen',
         dozent: 'ruprecht',
-        semester: '10',
+        semester: 10,
         studiengang: {
             '$ref': 'studiengang',
             '$id': ainID,
             '$db': 'htwg'
         },
-        sws: '20',
-        ects: '1'
+        sws: 20,
+        ects: 1
     }, {
         name: 'klatschen',
         dozent: 'maier',
-        semester: '2',
+        semester: 2,
         studiengang: {
             '$ref': 'studiengang',
             '$id': ainID,
             '$db': 'htwg'
         },
-        sws: '10',
-        ects: '10'
+        sws: 10,
+        ects: 10
     }, {
         name: 'programieren',
         dozent: 'eck',
-        semester: '3',
+        semester: 3,
         studiengang: {
             '$ref': 'studiengang',
             '$id': ainID,
             '$db': 'htwg'
         },
-        sws: '1',
-        ects: '20'
+        sws: 1,
+        ects: 20
     }, {
         name: 'lachen',
         dozent: 'boger',
-        semester: '2',
+        semester: 2,
         studiengang: {
             '$ref': 'studiengang',
             '$id': ainID,
             '$db': 'htwg'
         },
-        sws: '50',
-        ects: '2'
+        sws: 50,
+        ects: 2
     }, {
         name: 'datenbanken',
         dozent: 'johner',
-        semester: '4',
+        semester: 4,
         studiengang: {
             '$ref': 'studiengang',
             '$id': ainID,
             '$db': 'htwg'
         },
-        sws: '10',
-        ects: '20'
+        sws: 10,
+        ects: 20
     }, {
         name: 'algo',
         dozent: 'drachenfels',
-        semester: '5',
+        semester: 5,
         studiengang: {
             '$ref': 'studiengang',
             '$id': ainID,
             '$db': 'htwg'
         },
-        sws: '10',
-        ects: '10'
+        sws: 10,
+        ects: 10
     }, {
         name: 'c',
         dozent: 'maechtel',
-        semester: '7',
+        semester: 7,
         studiengang: {
             '$ref': 'studiengang',
             '$id': ainID,
             '$db': 'htwg'
         },
-        sws: '5',
-        ects: '5'
+        sws: 5,
+        ects: 5
     }, {
         name: 'bsys',
         dozent: 'maechtel',
-        semester: '8',
+        semester: 8,
         studiengang: {
             '$ref': 'studiengang',
             '$id': ainID,
             '$db': 'htwg'
         },
-        sws: '10',
-        ects: '10'
+        sws: 10,
+        ects: 10
     }
 ];
 
 var win = [
     {
-        name: '',
-        dozent: '',
-        semester: '',
+        name: 'wirtschaftliches rechnen',
+        dozent: 'hase',
+        semester: 1,
         studiengang: {
             '$ref': 'studiengang',
             '$id': winID,
             '$db': 'htwg'
         },
-        sws: '',
-        ects: ''
+        sws: 10,
+        ects: 2
     }, {
-        name: '',
-        dozent: '',
-        semester: '',
+        name: 'wirtschaftliches lesen',
+        dozent: 'bittel',
+        semester: 2,
         studiengang: {
             '$ref': 'studiengang',
             '$id': winID,
             '$db': 'htwg'
         },
-        sws: '',
-        ects: ''
+        sws: 1,
+        ects: 10
     }, {
-        name: '',
-        dozent: '',
-        semester: '',
+        name: 'wirtschaftliches malen',
+        dozent: 'ruprecht',
+        semester: 10,
         studiengang: {
             '$ref': 'studiengang',
             '$id': winID,
             '$db': 'htwg'
         },
-        sws: '',
-        ects: ''
+        sws: 20,
+        ects: 1
     }, {
-        name: '',
-        dozent: '',
-        semester: '',
+        name: 'wirtschaftliches klatschen',
+        dozent: 'maier',
+        semester: 2,
         studiengang: {
             '$ref': 'studiengang',
             '$id': winID,
             '$db': 'htwg'
         },
-        sws: '',
-        ects: ''
+        sws: 10,
+        ects: 10
     }, {
-        name: '',
-        dozent: '',
-        semester: '',
+        name: 'wirtschaftliches programieren',
+        dozent: 'eck',
+        semester: 3,
         studiengang: {
             '$ref': 'studiengang',
             '$id': winID,
             '$db': 'htwg'
         },
-        sws: '',
-        ects: ''
+        sws: 1,
+        ects: 20
     }, {
-        name: '',
-        dozent: '',
-        semester: '',
+        name: 'wirtschaftliches lachen',
+        dozent: 'boger',
+        semester: 2,
         studiengang: {
             '$ref': 'studiengang',
             '$id': winID,
             '$db': 'htwg'
         },
-        sws: '',
-        ects: ''
+        sws: 50,
+        ects: 2
     }, {
-        name: '',
-        dozent: '',
-        semester: '',
+        name: 'wirtschaftliche datenbanken',
+        dozent: 'johner',
+        semester: 4,
         studiengang: {
             '$ref': 'studiengang',
             '$id': winID,
             '$db': 'htwg'
         },
-        sws: '',
-        ects: ''
+        sws: 10,
+        ects: 20
     }, {
-        name: '',
-        dozent: '',
-        semester: '',
+        name: 'wirtschaftliche algo',
+        dozent: 'drachenfels',
+        semester: 5,
         studiengang: {
             '$ref': 'studiengang',
             '$id': winID,
             '$db': 'htwg'
         },
-        sws: '',
-        ects: ''
+        sws: 10,
+        ects: 10
     }, {
-        name: '',
-        dozent: '',
-        semester: '',
+        name: 'wirtschaftliches c',
+        dozent: 'maechtel',
+        semester: 7,
         studiengang: {
             '$ref': 'studiengang',
             '$id': winID,
             '$db': 'htwg'
         },
-        sws: '',
-        ects: ''
+        sws: 5,
+        ects: 5
     }, {
-        name: '',
-        dozent: '',
-        semester: '',
+        name: 'wirtschaftliches bsys',
+        dozent: 'maechtel',
+        semester: 8,
         studiengang: {
             '$ref': 'studiengang',
             '$id': winID,
             '$db': 'htwg'
         },
-        sws: '',
-        ects: ''
+        sws: 10,
+        ects: 10
     }
 ];
 
 var mit = [
     {
-        name: '',
-        dozent: '',
-        semester: '',
+        name: 'rechnen MASTER',
+        dozent: 'hase',
+        semester: 1,
         studiengang: {
             '$ref': 'studiengang',
             '$id': mitID,
             '$db': 'htwg'
         },
-        sws: '',
-        ects: ''
+        sws: 10,
+        ects: 2
     }, {
-        name: '',
-        dozent: '',
-        semester: '',
+        name: 'lesen MASTER',
+        dozent: 'bittel',
+        semester: 2,
         studiengang: {
             '$ref': 'studiengang',
             '$id': mitID,
             '$db': 'htwg'
         },
-        sws: '',
-        ects: ''
+        sws: 1,
+        ects: 10
     }, {
-        name: '',
-        dozent: '',
-        semester: '',
+        name: 'malen MASTER',
+        dozent: 'ruprecht',
+        semester: 10,
         studiengang: {
             '$ref': 'studiengang',
             '$id': mitID,
             '$db': 'htwg'
         },
-        sws: '',
-        ects: ''
+        sws: 20,
+        ects: 1
     }, {
-        name: '',
-        dozent: '',
-        semester: '',
+        name: 'klatschen MASTER',
+        dozent: 'maier',
+        semester: 2,
         studiengang: {
             '$ref': 'studiengang',
             '$id': mitID,
             '$db': 'htwg'
         },
-        sws: '',
-        ects: ''
+        sws: 10,
+        ects: 10
     }, {
-        name: '',
-        dozent: '',
-        semester: '',
+        name: 'programieren MASTER',
+        dozent: 'eck',
+        semester: 3,
         studiengang: {
             '$ref': 'studiengang',
             '$id': mitID,
             '$db': 'htwg'
         },
-        sws: '',
-        ects: ''
+        sws: 1,
+        ects: 20
     }, {
-        name: '',
-        dozent: '',
-        semester: '',
+        name: 'lachen MASTER',
+        dozent: 'boger',
+        semester: 2,
         studiengang: {
             '$ref': 'studiengang',
             '$id': mitID,
             '$db': 'htwg'
         },
-        sws: '',
-        ects: ''
+        sws: 50,
+        ects: 2
     }, {
-        name: '',
-        dozent: '',
-        semester: '',
+        name: 'datenbanken MASTER',
+        dozent: 'johner',
+        semester: 4,
         studiengang: {
             '$ref': 'studiengang',
             '$id': mitID,
             '$db': 'htwg'
         },
-        sws: '',
-        ects: ''
+        sws: 10,
+        ects: 20
     }, {
-        name: '',
-        dozent: '',
-        semester: '',
+        name: 'algo MASTER',
+        dozent: 'drachenfels',
+        semester: 5,
         studiengang: {
             '$ref': 'studiengang',
             '$id': mitID,
             '$db': 'htwg'
         },
-        sws: '',
-        ects: ''
+        sws: 10,
+        ects: 10
     }, {
-        name: '',
-        dozent: '',
-        semester: '',
+        name: 'c MASTER',
+        dozent: 'maechtel',
+        semester: 7,
         studiengang: {
             '$ref': 'studiengang',
             '$id': mitID,
             '$db': 'htwg'
         },
-        sws: '',
-        ects: ''
+        sws: 5,
+        ects: 5
     }, {
-        name: '',
-        dozent: '',
-        semester: '',
+        name: 'bsys MASTER',
+        dozent: 'maechtel',
+        semester: 8,
         studiengang: {
             '$ref': 'studiengang',
             '$id': mitID,
             '$db': 'htwg'
         },
-        sws: '',
-        ects: ''
+        sws: 10,
+        ects: 10
     }
 ];
 
