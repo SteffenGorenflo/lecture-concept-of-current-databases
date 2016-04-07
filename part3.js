@@ -244,3 +244,39 @@ var mit = [
 db.vorlesungen.insertMany(ain);
 db.vorlesungen.insertMany(win);
 db.vorlesungen.insertMany(mit);
+
+
+var map = function () {
+    emit({kurzel: this.studiengang.kurzel, semester: this.semester}, this.sws);
+};
+
+var reduce = function (key, value) {
+    return Array.sum(value)
+};
+
+db.vorlesungen.mapReduce(map, reduce, {out: 'map_reduce_a'});
+db.map_reduce_a.find({})
+    .forEach(function (u) {
+        print(u._id.kurzel + ' ' + u._id.semester + ' : ' + u.value + ' SWS')
+    });
+
+var map2 = function () {
+    emit({kurzel: this.studiengang.kurzel, semester: this.semester}, {sws: this.sws, ects: this.ects});
+};
+
+var reduce2 = function (key, value) {
+    var swssum = 0;
+    var ectssum = 0;
+    for (i = 0; i < value.length; i++) {
+        swssum += value[i].sws;
+        ectssum += value[i].ects;
+    }
+    return {sws: swssum, ects: ectssum};
+};
+
+db.vorlesungen.mapReduce(map2, reduce2, {out: 'map_reduce_b', query: {'studiengang.kurzel': 'AIN'}});
+
+db.map_reduce_b.find({})
+    .forEach(function (u) {
+        print(u._id.kurzel + ' ' + u._id.semester + ' : ' + u.value.sws + ' SWS' + ' ' + u.value.ects + ' ECTS')
+    });
