@@ -1,0 +1,21 @@
+a.)
+MATCH(p:professor)-[:ZUGEORDNET]->(: studiengaenge {kuerzel: "WIN"})
+MATCH(p)-[:HAELT {WS:true}]->(v)-[*1]->(: studiengaenge {kuerzel:"MSI"})
+RETURN v
+
+b.)
+// AIN => MSI, SS=>WS
+
+MATCH(p:professor)-[:ZUGEORDNET]->(:studiengaenge {kuerzel: "MSI"})
+MATCH(p)-[r:HAELT {WS:true}]->(v:vorlesungen)-[*1]->(:studiengaenge {kuerzel: "AIN"})
+WHERE v.ects >= 5
+WITH p, count(r) AS numberOfV
+WHERE numberOfV > 1
+RETURN p
+
+
+c.)
+MATCH(p:professor)-[:ZUGEORDNET]->(s1:studiengaenge)
+MATCH(p)-[:HAELT]->()-[:ENTHALTEN]->(s2: studiengaenge)
+WHERE NOT s2 = s1
+RETURN p

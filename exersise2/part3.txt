@@ -1,0 +1,21 @@
+a.)
+MATCH(tom:Person {name: "Tom Hanks"})-[:ACTED_IN]->(m:Movie)
+MATCH(director:Person)-[r:DIRECTED]->(m)
+WITH director, count(r) AS noc
+RETURN director, noc
+ORDER BY noc DESC
+LIMIT 3
+
+b.)
+MATCH(actor:Person)-[:ACTED_IN]->(m:Movie)
+MATCH(director:Person)-[:DIRECTED]->(m)
+WHERE NOT actor.name = director.name
+CREATE (actor)-[r1:KNOWS]->(director)
+CREATE (director)-[r2:KNOWS]->(actor)
+RETURN count(r1) + count(r2)
+
+c.)
+MATCH(keanu:Person {name: "Keanu Reeves"})-[:KNOWS]->(friends:Person)-[:KNOWS]->(p:Person)
+WHERE NOT friends.name = p.name
+RETURN p
+

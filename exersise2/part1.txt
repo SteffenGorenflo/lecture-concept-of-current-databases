@@ -1,0 +1,87 @@
+// DATA FOR DATABASE
+// studiengänge
+CREATE (AIN: studiengaenge { name: "Angewandte Informatik", kuerzel: "AIN", abschluss: "Bachelor" })
+CREATE (WIN: studiengaenge { name: "Wirtschaftsinformatik", kuerzel: "WIN", abschluss: "Bachelor" })
+CREATE (MSI: studiengaenge { name: "Informatik", kuerzel: "MSI", abschluss: "Master" })
+
+// AIN Vorlesungen
+CREATE (Mathematik: vorlesungen { name: "Mathematik 1 und Konsolidierung", sws: 8, ects: 10})
+CREATE (Rechnernetze: vorlesungen { name: "Rechnernetze", sws: 4, ects: 6})
+CREATE (Systemtechnik: vorlesungen { name: "Systemtechnik", sws: 4, ects: 6})
+CREATE (Rechnerarchitekturen: vorlesungen { name: "Rechnerarchitekturen", sws: 4, ects: 5})
+
+CREATE (Mathematik)-[:ENTHALTEN]->(AIN)
+CREATE (Rechnernetze)-[:ENTHALTEN]->(AIN)
+CREATE (Systemtechnik)-[:ENTHALTEN]->(AIN)
+CREATE (Rechnerarchitekturen)-[:ENTHALTEN]->(AIN)
+
+// WIN Vorlesungen
+CREATE (Rechnungswesen: vorlesungen { name: "Rechnungswesen", sws: 6, ects: 8})
+CREATE (Alda: vorlesungen { name: "Algorithmen und Datenstrukturen", sws: 4, ects: 6})
+CREATE (Geschäftsprozessmanagement: vorlesungen { name: "Geschäftsprozessmanagement", sws: 6, ects: 9})
+CREATE (ST: vorlesungen { name: "Software-Technik 2", sws: 4, ects: 5})
+
+CREATE (Rechnungswesen)-[:ENTHALTEN]->(WIN)
+CREATE (Alda)-[:ENTHALTEN]->(WIN)
+CREATE (Geschäftsprozessmanagement)-[:ENTHALTEN]->(WIN)
+CREATE (ST)-[:ENTHALTEN]->(WIN)
+
+
+// MSI Vorlesungen
+CREATE (ML: vorlesungen { name: "Maschinelles Lernen", sws: 3, ects: 5})
+CREATE (Mathematik2: vorlesungen { name: "Mathematik", sws: 4, ects: 6})
+CREATE (Reactive: vorlesungen { name: "Reactive Programming", sws: 3, ects: 5})
+CREATE (Modell: vorlesungen { name: "Modellgetriebene Softwareentwicklung", sws: 4, ects: 5})
+
+CREATE (ML)-[:ENTHALTEN]->(MSI)
+CREATE (Mathematik2)-[:ENTHALTEN]->(MSI)
+CREATE (Reactive)-[:ENTHALTEN]->(MSI)
+CREATE (Modell)-[:ENTHALTEN]->(MSI)
+
+
+// AIN Professoren
+CREATE (Garloff: professor { name: "Prof. Dr. Garloff" })
+CREATE (Stähle: professor { name: "Prof. Dr. Staehle" })
+CREATE (Franz: professor { name: "Prof. Dr. Franz" })
+CREATE (Neuschwander: professor { name: "Prof. Dr. Neuschwander" })
+
+CREATE (Garloff)-[:ZUGEORDNET]->(AIN)
+CREATE (Stähle)-[:ZUGEORDNET]->(AIN)
+CREATE (Franz)-[:ZUGEORDNET]->(AIN)
+CREATE (Neuschwander)-[:ZUGEORDNET]->(AIN)
+
+// WIN Professoren
+CREATE (Rentrop: professor { name: "Prof. Dr. Rentrop" })
+CREATE (Hedstueck: professor { name: "Prof. Dr. Hedstück" })
+CREATE (Mevius: professor { name: "Prof. Dr. Mevius" })
+CREATE (Johner: professor { name: "Prof. Dr. Johner" })
+
+CREATE (Rentrop)-[:ZUGEORDNET]->(WIN)
+CREATE (Hedstueck)-[:ZUGEORDNET]->(WIN)
+CREATE (Mevius)-[:ZUGEORDNET]->(WIN)
+CREATE (Johner)-[:ZUGEORDNET]->(WIN)
+
+
+// MSI Professoren
+CREATE (Heinrich: professor { name: "Prof. Dr. Heinrich" })
+CREATE (Boger: professor { name: "Prof. Dr. Boger" })
+CREATE (Drachenfels: professor { name: "Prof. Dr. von Drachenfels" })
+
+CREATE (Heinrich)-[:ZUGEORDNET]->(MSI)
+CREATE (Boger)-[:ZUGEORDNET]->(MSI)
+CREATE (Drachenfels)-[:ZUGEORDNET]->(MSI)
+
+CREATE (Garloff)-[:HAELT{SS: true, WS: true}]->(Mathematik)
+CREATE (Staehle)-[:HAELT{SS: true, WS: true}]->(Rechnernetze)
+CREATE (Franz)-[:HAELT{WS: true}]->(Systemtechnik)
+CREATE (Neuschwander)-[:HAELT{SS: true, WS: true}]->(Rechnerarchitekturen)
+CREATE (Rentrop)-[:HAELT{SS: true, WS: true}]->(Rechnungswesen)
+CREATE (Hedstück)-[:HAELT{SS: true, WS: true}]->(Alda)
+CREATE (Mevius)-[:HAELT{SS: true, WS: true}]->(Geschäftsprozessmanagement)
+CREATE (Johner)-[:HAELT{SS: true, WS: true}]->(ST)
+CREATE (Franz)-[:HAELT{SS: true}]->(ML)
+CREATE (Heinrich)-[:HAELT{SS: true, WS: true}]->(Mathematik2)
+CREATE (Boger)-[:HAELT{WS: true}]->(Reactive)
+CREATE (Drachenfels)-[:HAELT{SS: true}]->(Modell)
+CREATE (Boger)-[:HAELT{WS: true}]->(Reactive)
+

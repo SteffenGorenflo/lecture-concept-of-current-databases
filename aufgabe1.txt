@@ -1,27 +1,67 @@
+// AIN Vorlesungen
+CREATE (n: vorlesungen { name: "Mathematik 1 und Konsolidierung", sws: 8, ects: 10})
+CREATE (n: vorlesungen { name: "Rechnernetze", sws: 4, ects: 6})
+CREATE (n: vorlesungen { name: "Systemtechnik", sws: 4, ects: 6})
+CREATE (n: vorlesungen { name: "Rechnerarchitekturen", sws: 4, ects: 5})
+
+// WIN Vorlesungen
+CREATE (n: vorlesungen { name: "Rechnungswesen", sws: 6, ects: 8})
+CREATE (n: vorlesungen { name: "Algorithmen und Datenstrukturen", sws: 4, ects: 6})
+CREATE (n: vorlesungen { name: "Geschäftsprozessmanagement", sws: 6, ects: 9})
+CREATE (n: vorlesungen { name: "Software-Technik 2", sws: 4, ects: 5})
+
+// MSI Vorlesungen
+CREATE (n: vorlesungen { name: "Maschinelles Lernen", sws: 3, ects: 5})
+CREATE (n: vorlesungen { name: "Mathematik", sws: 4, ects: 6})
+CREATE (n: vorlesungen { name: "Reactive Programming", sws: 3, ects: 5})
+CREATE (n: vorlesungen { name: "Modellgetriebene Softwareentwicklung", sws: 4, ects: 5})
+
+// AIN Professoren
+CREATE (n: professor { name: "Prof. Dr. Garloff" })
+CREATE (n: professor { name: "Prof. Dr. Staehle" })
+CREATE (n: professor { name: "Prof. Dr. Franz" })
+CREATE (n: professor { name: "Prof. Dr. Neuschwander" })
+
+// WIN Professoren
+CREATE (n: professor { name: "Prof. Dr. Rentrop" })
+CREATE (n: professor { name: "Prof. Dr. Hedstück" })
+CREATE (n: professor { name: "Prof. Dr. Mevius" })
+CREATE (n: professor { name: "Prof. Dr. Johner" })
+
+// MSI Professoren
+CREATE (n: professor { name: "Prof. Dr. Heinrich" })
+CREATE (n: professor { name: "Prof. Dr. Boger" })
+CREATE (n: professor { name: "Prof. Dr. von Drachenfels" })
+
+// studiengänge
+CREATE (n: studiengaenge { name: "Angewandte Informatik", kuerzel: "AIN", abschluss: "Bachelor" })
+CREATE (n: studiengaenge { name: "Wirtschaftsinformatik", kuerzel: "WIN", abschluss: "Bachelor" })
+CREATE (n: studiengaenge { name: "Informatik", kuerzel: "MSI", abschluss: "Master" })
+
 // Beziehung ENTHALTEN
-MATCH (s:studiengaenge {kuerzel: "AIN"}), (v:vorlesungen {name: "Mathematik 1 und Konsolidierung"})
+MATCH (s:studiengaenge {kuerzel: "AIN"}), (v:vorlesungen {name: "Mathematik 1 und Konsolidierung"}) 
 CREATE (v)-[:ENTHALTEN]->(s)
-MATCH (s:studiengaenge {kuerzel: "AIN"}), (v:vorlesungen {name: "Rechnernetze"})
+MATCH (s:studiengaenge {kuerzel: "AIN"}), (v:vorlesungen {name: "Rechnernetze"}) 
 CREATE (v)-[:ENTHALTEN]->(s)
-MATCH (s:studiengaenge {kuerzel: "AIN"}), (v:vorlesungen {name: "Systemtechnik"})
+MATCH (s:studiengaenge {kuerzel: "AIN"}), (v:vorlesungen {name: "Systemtechnik"}) 
 CREATE (v)-[:ENTHALTEN]->(s)
-MATCH (s:studiengaenge {kuerzel: "AIN"}), (v:vorlesungen {name: "Rechnerarchitekturen"})
+MATCH (s:studiengaenge {kuerzel: "AIN"}), (v:vorlesungen {name: "Rechnerarchitekturen"}) 
 CREATE (v)-[:ENTHALTEN]->(s)
-MATCH (s:studiengaenge {kuerzel: "WIN"}), (v:vorlesungen {name: "Rechnungswesen"})
+MATCH (s:studiengaenge {kuerzel: "WIN"}), (v:vorlesungen {name: "Rechnungswesen"}) 
 CREATE (v)-[:ENTHALTEN]->(s)
-MATCH (s:studiengaenge {kuerzel: "WIN"}), (v:vorlesungen {name: "Algorithmen und Datenstrukturen"})
+MATCH (s:studiengaenge {kuerzel: "WIN"}), (v:vorlesungen {name: "Algorithmen und Datenstrukturen"}) 
 CREATE (v)-[:ENTHALTEN]->(s)
-MATCH (s:studiengaenge {kuerzel: "WIN"}), (v:vorlesungen {name: "Geschäftsprozessmanagement"})
+MATCH (s:studiengaenge {kuerzel: "WIN"}), (v:vorlesungen {name: "Geschäftsprozessmanagement"}) 
 CREATE (v)-[:ENTHALTEN]->(s)
-MATCH (s:studiengaenge {kuerzel: "WIN"}), (v:vorlesungen {name: "Software-Technik 2"})
+MATCH (s:studiengaenge {kuerzel: "WIN"}), (v:vorlesungen {name: "Software-Technik 2"}) 
 CREATE (v)-[:ENTHALTEN]->(s)
-MATCH (s:studiengaenge {kuerzel: "MSI"}), (v:vorlesungen {name: "Maschinelles Lernen"})
+MATCH (s:studiengaenge {kuerzel: "MSI"}), (v:vorlesungen {name: "Maschinelles Lernen"}) 
 CREATE (v)-[:ENTHALTEN]->(s)
-MATCH (s:studiengaenge {kuerzel: "MSI"}), (v:vorlesungen {name: "Mathematik"})
+MATCH (s:studiengaenge {kuerzel: "MSI"}), (v:vorlesungen {name: "Mathematik"}) 
 CREATE (v)-[:ENTHALTEN]->(s)
-MATCH (s:studiengaenge {kuerzel: "MSI"}), (v:vorlesungen {name: "Reactive Programming"})
+MATCH (s:studiengaenge {kuerzel: "MSI"}), (v:vorlesungen {name: "Reactive Programming"}) 
 CREATE (v)-[:ENTHALTEN]->(s)
-MATCH (s:studiengaenge {kuerzel: "MSI"}), (v:vorlesungen {name: "Modellgetriebene Softwareentwicklung"})
+MATCH (s:studiengaenge {kuerzel: "MSI"}), (v:vorlesungen {name: "Modellgetriebene Softwareentwicklung"}) 
 CREATE (v)-[:ENTHALTEN]->(s)
 
 // Beziehung ZUGEORDNET
@@ -78,7 +118,7 @@ CREATE (p)-[:HAELT{SS: true}]->(v)
 CREATE (n: vorlesungen { name: "Data Analytics", sws: 3, ects: 5})
 MATCH(p:professor {name: "Prof. Dr. Hedstück"}), (v:vorlesungen {name: "Data Analytics"})
 CREATE (p)-[:HAELT{WS: true}]->(v)
-MATCH (s:studiengaenge {kuerzel: "MSI"}), (v:vorlesungen {name: "Data Analytics"})
+MATCH (s:studiengaenge {kuerzel: "MSI"}), (v:vorlesungen {name: "Data Analytics"}) 
 CREATE (v)-[:ENTHALTEN]->(s)
 // falsche relationship löschen
 MATCH(v:vorlesungen {name: "Data Analytics"})-[r:ENTHALTEN]->(s:studiengaenge {kuerzel: "WIN"})
@@ -87,5 +127,8 @@ DELETE r
 CREATE (n: vorlesungen { name: "Technische Grundlagen der Angewandten Informatik", sws: 4, ects: 5})
 MATCH(p:professor {name: "Prof. Dr. Franz"}), (v:vorlesungen {name: "Technische Grundlagen der Angewandten Informatik"})
 CREATE (p)-[:HAELT{WS: true, SS: true}]->(v)
-MATCH (s:studiengaenge {kuerzel: "AIN"}), (v:vorlesungen {name: "Technische Grundlagen der Angewandten Informatik"})
+MATCH (s:studiengaenge {kuerzel: "AIN"}), (v:vorlesungen {name: "Technische Grundlagen der Angewandten Informatik"}) 
 CREATE (v)-[:ENTHALTEN]->(s)
+
+
+
