@@ -41,12 +41,12 @@ CREATE (Modell)-[:ENTHALTEN]->(MSI)
 
 // AIN Professoren
 CREATE (Garloff: professor { name: "Prof. Dr. Garloff" })
-CREATE (Stähle: professor { name: "Prof. Dr. Staehle" })
+CREATE (Staehle: professor { name: "Prof. Dr. Staehle" })
 CREATE (Franz: professor { name: "Prof. Dr. Franz" })
 CREATE (Neuschwander: professor { name: "Prof. Dr. Neuschwander" })
 
 CREATE (Garloff)-[:ZUGEORDNET]->(AIN)
-CREATE (Stähle)-[:ZUGEORDNET]->(AIN)
+CREATE (Staehle)-[:ZUGEORDNET]->(AIN)
 CREATE (Franz)-[:ZUGEORDNET]->(AIN)
 CREATE (Neuschwander)-[:ZUGEORDNET]->(AIN)
 
@@ -76,7 +76,7 @@ CREATE (Staehle)-[:HAELT{SS: true, WS: true}]->(Rechnernetze)
 CREATE (Franz)-[:HAELT{WS: true}]->(Systemtechnik)
 CREATE (Neuschwander)-[:HAELT{SS: true, WS: true}]->(Rechnerarchitekturen)
 CREATE (Rentrop)-[:HAELT{SS: true, WS: true}]->(Rechnungswesen)
-CREATE (Hedstück)-[:HAELT{SS: true, WS: true}]->(Alda)
+CREATE (Hedstueck)-[:HAELT{SS: true, WS: true}]->(Alda)
 CREATE (Mevius)-[:HAELT{SS: true, WS: true}]->(Geschäftsprozessmanagement)
 CREATE (Johner)-[:HAELT{SS: true, WS: true}]->(ST)
 CREATE (Franz)-[:HAELT{SS: true}]->(ML)
