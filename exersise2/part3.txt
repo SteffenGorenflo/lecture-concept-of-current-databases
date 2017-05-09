@@ -2,20 +2,23 @@ a.)
 MATCH(tom:Person {name: "Tom Hanks"})-[:ACTED_IN]->(m:Movie)
 MATCH(director:Person)-[r:DIRECTED]->(m)
 WITH director, count(r) AS noc
-RETURN director, noc
 ORDER BY noc DESC
 LIMIT 3
+RETURN director, noc
 
 b.)
-MATCH(actor:Person)-[:ACTED_IN]->(m:Movie)
-MATCH(director:Person)-[:DIRECTED]->(m)
-WHERE NOT actor.name = director.name
-CREATE (actor)-[r1:KNOWS]->(director)
-CREATE (director)-[r2:KNOWS]->(actor)
-RETURN count(r1) + count(r2)
+MATCH(p1:Person)-[:ACTED_IN|DIRECTED]->(m:Movie)<-[:DIRECTED|ACTED_IN]-(p2:Person)
+WHERE p1 <> p2
+CREATE (p1)-[:KNOWS]->(p2)
+
+
 
 c.)
-MATCH(keanu:Person {name: "Keanu Reeves"})-[:KNOWS]->(friends:Person)-[:KNOWS]->(p:Person)
-WHERE NOT friends.name = p.name
-RETURN p
+MATCH(keanu:Person {name: "Keanu Reeves"})-[:KNOWS]->()-[:KNOWS]->(p:Person)
+WHERE keanu<>p AND NOT ((keanu)-[:KNOWS]->(p))
+RETURN DISTINCT p.name
 
+d.)
+MATCH(k:Person {name: "Keanu Reeves"}), (b:Person{name:"Kevin Bacon" })
+MATCH p=shortestPath((k)-[:KNOWS*]->(b))
+RETURN p
