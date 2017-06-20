@@ -1,0 +1,40 @@
+
+# aufgabe 3
+<result>
+{
+let $db := db:open('factbook')
+let $countries := $db//country
+for $country in $countries
+  where $country/@total_area > 1000000
+  let $capital := $country//city[@id=$country/@capital]/name[1]
+  order by $country
+  return <country>{$country/name[1]}<capital>{$capital/text()}</capital></country>
+}
+</result>
+
+# aufgabe 4
+<result>
+{
+let $db := db:open('factbook')
+
+let $amazonas := $db//river[@name='Amazonas']
+
+for $country_id in $amazonas/located/@country
+  let $country :=  $db//country[@id=$country_id]
+  return $country/name
+}
+</result>
+
+
+# aufgabe 5
+<neighbours>
+{
+let $countries := db:open('factbook')//country
+for $neighbour_id in $countries[@name='Germany']/border/@country
+  let $neighbour := $countries[@id=$neighbour_id]
+  order by $neighbour
+  return <country>{$neighbour/name/text()}</country>
+}
+</neighbours>
+
+
